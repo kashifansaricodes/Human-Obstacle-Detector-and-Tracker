@@ -13,10 +13,20 @@ target_include_directories(shell-app PUBLIC
 )
 
 # Any dependent libraires needed to build this target.
-target_link_libraries(shell-app PUBLIC -static
+target_link_libraries(shell-app PUBLIC
   # list of libraries
   myLib1
   myLib2
   )
 
-  
+# Include directories
+target_include_directories(shell-app PUBLIC 
+    ${CMAKE_SOURCE_DIR}/include
+    ${OpenCV_INCLUDE_DIRS}
+)
+
+# Link libraries
+target_link_libraries(shell-app PUBLIC
+    perception_task
+    ${OpenCV_LIBS}
+)

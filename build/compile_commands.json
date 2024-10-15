@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/libs/lib1",
+  "command": "/usr/lib/ccache/c++  -I/usr/include/opencv4 -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/.  -std=c++14 -std=gnu++14 -o CMakeFiles/myLib1.dir/src.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/src.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/src.cpp"
+},
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/libs/lib2",
+  "command": "/usr/lib/ccache/c++  -I/usr/include/opencv4 -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/.  -std=c++14 -std=gnu++14 -o CMakeFiles/myLib2.dir/src.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/src.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/src.cpp"
+},
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/app",
+  "command": "/usr/lib/ccache/c++  -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/. -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/. -isystem /usr/include/opencv4  -std=c++14 -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/app/main.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/app/main.cpp"
+},
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/test",
+  "command": "/usr/lib/ccache/c++  -I/usr/include/opencv4 -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/. -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/. -isystem /home/abhishek/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/include -isystem /home/abhishek/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest  -std=c++14 -std=gnu++14 -o CMakeFiles/cpp-test.dir/main.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/test/main.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/test/main.cpp"
+},
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/test",
+  "command": "/usr/lib/ccache/c++  -I/usr/include/opencv4 -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib1/. -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/libs/lib2/. -isystem /home/abhishek/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/include -isystem /home/abhishek/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest  -std=c++14 -std=gnu++14 -o CMakeFiles/cpp-test.dir/test.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/test/test.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/test/test.cpp"
+},
+{
+  "directory": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/build/Perception_Task",
+  "command": "/usr/lib/ccache/c++  -I/home/abhishek/Human-Obstacle-Detector-and-Tracker/include -isystem /usr/include/opencv4  -std=c++14 -std=gnu++14 -o CMakeFiles/perception_task.dir/perception_task.cpp.o -c /home/abhishek/Human-Obstacle-Detector-and-Tracker/Perception_Task/perception_task.cpp",
+  "file": "/home/abhishek/Human-Obstacle-Detector-and-Tracker/Perception_Task/perception_task.cpp"
+}
+]

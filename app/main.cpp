@@ -1,12 +1,34 @@
-#include "lib.hpp"
-#include "lib1.hpp"
-#include "lib2.hpp"
+#include "perception_task.hpp"
+#include <opencv2/opencv.hpp>
+#include <string>
 
 int main() {
-  dummy();
-  my_function1(30);
-  bool cond = true;
-  if (cond)
-    my_function2(30.3);
-  return 0;
+    cv::VideoCapture cap(0);  // Open the default camera
+    if (!cap.isOpened()) {
+        std::cerr << "Error opening video capture" << std::endl;
+        return -1;
+    }
+
+    // Use relative paths
+    std::string onnx_path = "../yolo_files/yolov5s.onnx";
+    std::string coco_path = "../yolo_files/coco.names";
+
+    HumanDetectorTracker detector(onnx_path, coco_path);
+    cv::Mat frame;
+
+    while (true) {
+        cap >> frame;
+        if (frame.empty()) {
+            std::cerr << "Error capturing frame" << std::endl;
+            break;
+        }
+
+        detector.detectAndTrack(frame);
+
+        cv::imshow("Human Detector and Tracker", frame);
+
+        if (cv::waitKey(30) >= 0) break;
+    }
+
+    return 0;
 }

@@ -9,6 +9,7 @@ project(scratch)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 # declares a dependency on GoogleTest which is downloaded from GitHub
 include(FetchContent)
@@ -23,6 +24,14 @@ FetchContent_MakeAvailable(googletest)
 # Enables testing for this directory and below
 enable_testing()
 include(GoogleTest)
+
+# Find OpenCV package
+find_package(OpenCV REQUIRED)
+
+# Include OpenCV and project include directories
+include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
 
 #
 # Doxygen Support check if Doxygen is installed
@@ -94,6 +103,7 @@ endif()
 add_subdirectory(libs)
 add_subdirectory(app)
 add_subdirectory(test)
+add_subdirectory(Perception_Task)
 
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
@@ -101,6 +111,7 @@ doxygen_add_docs(docs           # target name
   ${PROJECT_SOURCE_DIR}/app
   ${PROJECT_SOURCE_DIR}/libs
   ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/Perception_Task
   )
 
 # create targets for building code coverage reports
@@ -108,20 +119,19 @@ if(WANT_COVERAGE)
   # unit test coverage:
   setup_target_for_coverage_lcov ( # use lcov to generate coverage report
     NAME test_coverage          # target name
-    #EXECUTABLE ctest || true    # what to run insdie the build directory?
-                                 #   '|| true' --> continue coverage even if ctest failed
-    EXECUTABLE ctest     # what to run insdie the build directory?
+    EXECUTABLE ctest     # what to run inside the build directory?
     EXCLUDE
       "app/main.cpp"     # Unit test does not run app, so don't analyze it
       "*gtest*"          # Don't analyze googleTest code
       "/usr/include/*"   # Don't analyze system headers
+      "Perception_Task/perception_task.cpp"  # Exclude from unit test coverage if needed
     )
 
   # code coverage for the app (shell-app):
-  # Use gcovr insetad of lcov if you want to see branch coverage as well
+  # Use gcovr instead of lcov if you want to see branch coverage as well
   setup_target_for_coverage_gcovr_html ( # use gcovr to generate coverage report
     NAME app_coverage          # target name
-    EXECUTABLE shell-app       # what to run insdie the build directory?
+    EXECUTABLE shell-app       # what to run inside the build directory?
     EXCLUDE
     "test/test.cpp"    # App does not run unit test, so don't analyze it
     "test/main.cpp"    # App does not run unit test, so don't analyze it
@@ -133,3 +143,5 @@ endif()
 # can also do "cmake -S ./ -B build/ -LAH" to print all variables
 message(STATUS "CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 message(STATUS "WANT_COVERAGE    = ${WANT_COVERAGE}")
+message(STATUS "OpenCV_VERSION   = ${OpenCV_VERSION}")
+message(STATUS "OpenCV_LIBS = ${OpenCV_LIBS}")
