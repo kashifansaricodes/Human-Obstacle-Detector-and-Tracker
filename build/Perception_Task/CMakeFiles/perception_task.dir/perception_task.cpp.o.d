@@ -1,7 +1,7 @@
 Perception_Task/CMakeFiles/perception_task.dir/perception_task.cpp.o: \
  /home/abhishek/Human-Obstacle-Detector-and-Tracker/Perception_Task/perception_task.cpp \
  /usr/include/stdc-predef.h \
- /home/abhishek/Human-Obstacle-Detector-and-Tracker/Perception_Task/../include/perception_task.hpp \
+ /home/abhishek/Human-Obstacle-Detector-and-Tracker/include/perception_task.hpp \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \

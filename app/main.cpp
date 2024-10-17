@@ -1,6 +1,7 @@
 #include "perception_task.hpp"
 #include <opencv2/opencv.hpp>
 #include <string>
+#include <iostream>
 
 int main() {
     cv::VideoCapture cap(0);  // Open the default camera
@@ -9,25 +10,36 @@ int main() {
         return -1;
     }
 
-    // Use relative paths
-    std::string onnx_path = "../yolo_files/yolov5s.onnx";
-    std::string coco_path = "../yolo_files/coco.names";
+    // Use absolute paths
+    std::string model_path = "/home/abhishek/Human-Obstacle-Detector-and-Tracker/yolo_files/yolov3.weights";
+    std::string config_path = "/home/abhishek/Human-Obstacle-Detector-and-Tracker/yolo_files/yolov3.cfg";
+    std::string classes_path = "/home/abhishek/Human-Obstacle-Detector-and-Tracker/yolo_files/coco.names";
 
-    HumanDetectorTracker detector(onnx_path, coco_path);
-    cv::Mat frame;
+    std::cout << "Model path: " << model_path << std::endl;
+    std::cout << "Config path: " << config_path << std::endl;
+    std::cout << "Classes path: " << classes_path << std::endl;
 
-    while (true) {
-        cap >> frame;
-        if (frame.empty()) {
-            std::cerr << "Error capturing frame" << std::endl;
-            break;
+    try {
+        HumanDetectorTracker detector(model_path, config_path, classes_path);
+        cv::Mat frame;
+
+        while (true) {
+            cap >> frame;
+            if (frame.empty()) {
+                std::cerr << "Error capturing frame" << std::endl;
+                break;
+            }
+
+            detector.detectAndTrack(frame);
+
+            cv::imshow("Human Detector and Tracker", frame);
+
+            if (cv::waitKey(30) >= 0) break;
         }
-
-        detector.detectAndTrack(frame);
-
-        cv::imshow("Human Detector and Tracker", frame);
-
-        if (cv::waitKey(30) >= 0) break;
+    } catch (const cv::Exception& e) {
+        std::cerr << "OpenCV exception: " << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Standard exception: " << e.what() << std::endl;
     }
 
     return 0;

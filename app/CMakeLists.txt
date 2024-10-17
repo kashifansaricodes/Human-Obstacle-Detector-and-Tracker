@@ -1,32 +1,18 @@
-# Any C++ source files needed to build this target (shell-app).
+# Add the executable
 add_executable(shell-app
-  # list of source cpp files:
   main.cpp
-  )
-
-# Any include directories needed to build this target.
-# Note: we do not need to specify the include directories for the
-# dependent libraries, they are automatically included.
-target_include_directories(shell-app PUBLIC
-  # list inclue directories:
-  ${CMAKE_SOURCE_DIR}/include
 )
 
-# Any dependent libraires needed to build this target.
-target_link_libraries(shell-app PUBLIC
-  # list of libraries
-  myLib1
-  myLib2
-  )
-
 # Include directories
-target_include_directories(shell-app PUBLIC 
-    ${CMAKE_SOURCE_DIR}/include
-    ${OpenCV_INCLUDE_DIRS}
+target_include_directories(shell-app PUBLIC
+  ${CMAKE_SOURCE_DIR}/include
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 # Link libraries
 target_link_libraries(shell-app PUBLIC
-    perception_task
-    ${OpenCV_LIBS}
+  myLib1
+  myLib2
+  perception_task
+  ${OpenCV_LIBS}
 )

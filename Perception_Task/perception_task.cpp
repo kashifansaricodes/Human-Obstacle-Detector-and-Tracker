@@ -1,20 +1,25 @@
-#include "../include/perception_task.hpp"
-#include <fstream>
+#include "perception_task.hpp"
 #include <iostream>
+#include <fstream>
 
-HumanDetectorTracker::HumanDetectorTracker(const std::string& modelPath, const std::string& classesPath) {
-    // Load YOLO network from ONNX file
-    net = cv::dnn::readNetFromONNX(modelPath);
+HumanDetectorTracker::HumanDetectorTracker(const std::string& modelPath, const std::string& configPath, const std::string& classesPath) {
+    net = cv::dnn::readNetFromDarknet(configPath, modelPath);
+    if (net.empty()) {
+        throw std::runtime_error("Failed to load the model from: " + modelPath);
+    }
     net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
     net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 
     // Load class names
-    std::ifstream ifs(classesPath.c_str());
-    std::string line;
-    while (std::getline(ifs, line)) classes.push_back(line);
+    std::ifstream classNamesFile(classesPath);
+    if (classNamesFile.is_open()) {
+        std::string className;
+        while (std::getline(classNamesFile, className)) {
+            classes.push_back(className);
+        }
+    }
 
     // Initialize camera matrix and distortion coefficients
-    // These should be calibrated for your specific camera
     cameraMatrix = (cv::Mat_<double>(3,3) << 
         1000, 0, 320,
         0, 1000, 240,
@@ -22,39 +27,32 @@ HumanDetectorTracker::HumanDetectorTracker(const std::string& modelPath, const s
     distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
 }
 
-void HumanDetectorTracker::detectAndTrack(cv::Mat& frame) {
-    std::vector<cv::Rect> detections = detectHumans(frame);
-    updateTrackers(frame, detections);
-}
-
 std::vector<cv::Rect> HumanDetectorTracker::detectHumans(const cv::Mat& frame) {
-    cv::Mat blob;
-    cv::dnn::blobFromImage(frame, blob, 1/255.0, cv::Size(640, 640), cv::Scalar(0,0,0), true, false);
+    cv::Mat blob = cv::dnn::blobFromImage(frame, 1/255.0, cv::Size(416, 416), cv::Scalar(0,0,0), true, false);
     net.setInput(blob);
 
-    std::vector<cv::Mat> outputs;
-    net.forward(outputs, net.getUnconnectedOutLayersNames());
+    std::vector<cv::Mat> outs;
+    net.forward(outs, net.getUnconnectedOutLayersNames());
 
-    std::vector<int> classIds;
-    std::vector<float> confidences;
     std::vector<cv::Rect> boxes;
-
-    for (const auto& output : outputs) {
-        for (int i = 0; i < output.rows; ++i) {
-            cv::Mat scores = output.row(i).colRange(5, output.cols);
+    std::vector<float> confidences;
+    
+    for (const auto& out : outs) {
+        for (int i = 0; i < out.rows; ++i) {
+            cv::Mat scores = out.row(i).colRange(5, out.cols);
             cv::Point classIdPoint;
             double confidence;
             cv::minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
             
             if (confidence > 0.5 && classes[classIdPoint.x] == "person") {
-                float centerX = output.at<float>(i, 0) * frame.cols;
-                float centerY = output.at<float>(i, 1) * frame.rows;
-                float width = output.at<float>(i, 2) * frame.cols;
-                float height = output.at<float>(i, 3) * frame.rows;
+                int centerX = static_cast<int>(out.at<float>(i, 0) * frame.cols);
+                int centerY = static_cast<int>(out.at<float>(i, 1) * frame.rows);
+                int width = static_cast<int>(out.at<float>(i, 2) * frame.cols);
+                int height = static_cast<int>(out.at<float>(i, 3) * frame.rows);
+                int left = centerX - width / 2;
+                int top = centerY - height / 2;
                 
-                cv::Rect box(centerX - width/2, centerY - height/2, width, height);
-                boxes.push_back(box);
-                classIds.push_back(classIdPoint.x);
+                boxes.push_back(cv::Rect(left, top, width, height));
                 confidences.push_back(static_cast<float>(confidence));
             }
         }
@@ -63,12 +61,29 @@ std::vector<cv::Rect> HumanDetectorTracker::detectHumans(const cv::Mat& frame) {
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, 0.5, 0.4, indices);
 
-    std::vector<cv::Rect> detections;
+    std::vector<cv::Rect> detectedHumans;
     for (int idx : indices) {
-        detections.push_back(boxes[idx]);
+        detectedHumans.push_back(boxes[idx]);
     }
 
-    return detections;
+    return detectedHumans;
+}
+
+void HumanDetectorTracker::detectAndTrack(cv::Mat& frame) {
+    std::vector<cv::Rect> detections = detectHumans(frame);
+    updateTrackers(frame, detections);
+
+    // Draw bounding boxes for detected humans
+    for (const auto& detection : detections) {
+        cv::rectangle(frame, detection, cv::Scalar(0, 255, 0), 2);
+        cv::Point3f location = getLocation(detection);
+        cv::putText(frame, 
+                    "Human: (" + std::to_string(int(location.x)) + ", " + 
+                    std::to_string(int(location.y)) + ", " + 
+                    std::to_string(int(location.z)) + ")",
+                    cv::Point(detection.x, detection.y - 10),
+                    cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 2);
+    }
 }
 
 void HumanDetectorTracker::updateTrackers(cv::Mat& frame, const std::vector<cv::Rect>& detections) {
@@ -77,9 +92,14 @@ void HumanDetectorTracker::updateTrackers(cv::Mat& frame, const std::vector<cv::
     while (it != trackers.end()) {
         cv::Rect trackedRect;
         if ((*it)->update(frame, trackedRect)) {
-            cv::rectangle(frame, trackedRect, cv::Scalar(0, 255, 0), 2);
+            cv::rectangle(frame, trackedRect, cv::Scalar(255, 0, 0), 2);
             cv::Point3f location = getLocation(trackedRect);
-            std::cout << "Tracked human at: (" << location.x << ", " << location.y << ", " << location.z << ")" << std::endl;
+            cv::putText(frame, 
+                        "Tracked: (" + std::to_string(int(location.x)) + ", " + 
+                        std::to_string(int(location.y)) + ", " + 
+                        std::to_string(int(location.z)) + ")",
+                        cv::Point(trackedRect.x, trackedRect.y - 10),
+                        cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255, 0, 0), 2);
             ++it;
         } else {
             it = trackers.erase(it);
@@ -102,9 +122,6 @@ void HumanDetectorTracker::updateTrackers(cv::Mat& frame, const std::vector<cv::
             cv::Ptr<cv::Tracker> tracker = cv::TrackerKCF::create();
             tracker->init(frame, det);
             trackers.push_back(tracker);
-            cv::rectangle(frame, det, cv::Scalar(255, 0, 0), 2);
-            cv::Point3f location = getLocation(det);
-            std::cout << "New human detected at: (" << location.x << ", " << location.y << ", " << location.z << ")" << std::endl;
         }
     }
 }

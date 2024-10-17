@@ -3,13 +3,12 @@
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
-#include <opencv2/dnn.hpp>
 #include <vector>
 #include <string>
 
 class HumanDetectorTracker {
 public:
-    HumanDetectorTracker(const std::string& modelPath, const std::string& classesPath);
+    HumanDetectorTracker(const std::string& modelPath, const std::string& configPath, const std::string& classesPath);
     void detectAndTrack(cv::Mat& frame);
 
 private:
