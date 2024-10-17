@@ -1,4 +1,4 @@
-#Huamn Obstacle Detection and Tracking
+# Huamn Obstacle Detection and Tracking
 
 ## For QuadCharts, Proposals and Software Plan refer sub-directory Documents
 ## For UML diagrams, refer to sub-directory UML
