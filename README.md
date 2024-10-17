@@ -7,7 +7,7 @@
 ## For QuadCharts, Proposals and Software Plan refer sub-directory Documents
 ## For UML diagrams, refer to sub-directory UML
 
-# Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
+## Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
 
 ## Standard install via command-line
 ```bash
