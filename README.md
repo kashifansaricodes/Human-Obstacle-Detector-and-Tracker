@@ -5,6 +5,8 @@
 
 ## Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
 
+## Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
+
 ## Standard install via command-line
 ```bash
 # Download the code:
