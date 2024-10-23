@@ -7,7 +7,7 @@
 
 ## Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
-## Standard protocol to tun the workspace
+## Standard protocol to run the workspace
 ```bash
 # Download the code:
   git clone https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker
@@ -32,8 +32,3 @@
   cmake --build build/ --target docs
   # open a web browser to browse the doc
   open docs/html/index.html
-# Clean
-  cmake --build build/ --target clean
-# Clean and start over:
-  rm -rf build/
-```
