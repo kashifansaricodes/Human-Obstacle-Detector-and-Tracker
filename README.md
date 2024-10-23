@@ -7,11 +7,11 @@
 
 ## Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
-## Standard install via command-line
+## Standard protocol to tun the workspace
 ```bash
 # Download the code:
-  git clone https://github.com/TommyChangUMD/cpp-boilerplate-v2
-  cd cpp-boilerplate-v2
+  git clone https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker
+  cd Human-Obstacle-Detector-and-Tracker
 # Configure the project and generate a native build system:
   # Must re-run this command whenever any CMakeLists.txt file has been changed.
   cmake -S ./ -B build/
