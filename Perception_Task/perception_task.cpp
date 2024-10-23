@@ -1,7 +1,19 @@
+/**
+ * @file perception_task.cpp
+ * @brief Implementation of the HumanDetectorTracker class for detecting and tracking humans in video frames.
+ */
+
 #include "perception_task.hpp"
 #include <iostream>
 #include <fstream>
 
+/**
+ * @brief Constructor for HumanDetectorTracker.
+ * @param modelPath Path to the YOLO model weights file.
+ * @param configPath Path to the YOLO model configuration file.
+ * @param classesPath Path to the COCO classes file.
+ * @throw std::runtime_error if the model fails to load.
+ */
 HumanDetectorTracker::HumanDetectorTracker(const std::string& modelPath, const std::string& configPath, const std::string& classesPath) {
     net = cv::dnn::readNetFromDarknet(configPath, modelPath);
     if (net.empty()) {
@@ -27,6 +39,11 @@ HumanDetectorTracker::HumanDetectorTracker(const std::string& modelPath, const s
     distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
 }
 
+/**
+ * @brief Detects humans in a given frame using YOLO.
+ * @param frame The input frame to process.
+ * @return A vector of bounding boxes for detected humans.
+ */
 std::vector<cv::Rect> HumanDetectorTracker::detectHumans(const cv::Mat& frame) {
     cv::Mat blob = cv::dnn::blobFromImage(frame, 1/255.0, cv::Size(416, 416), cv::Scalar(0,0,0), true, false);
     net.setInput(blob);
@@ -69,6 +86,10 @@ std::vector<cv::Rect> HumanDetectorTracker::detectHumans(const cv::Mat& frame) {
     return detectedHumans;
 }
 
+/**
+ * @brief Detects and tracks humans in a given frame.
+ * @param frame The input frame to process.
+ */
 void HumanDetectorTracker::detectAndTrack(cv::Mat& frame) {
     std::vector<cv::Rect> detections = detectHumans(frame);
     updateTrackers(frame, detections);
@@ -86,6 +107,11 @@ void HumanDetectorTracker::detectAndTrack(cv::Mat& frame) {
     }
 }
 
+/**
+ * @brief Updates the trackers with new detections.
+ * @param frame The current frame.
+ * @param detections The new detections to update the trackers with.
+ */
 void HumanDetectorTracker::updateTrackers(cv::Mat& frame, const std::vector<cv::Rect>& detections) {
     // Update existing trackers
     auto it = trackers.begin();
@@ -126,6 +152,11 @@ void HumanDetectorTracker::updateTrackers(cv::Mat& frame, const std::vector<cv::
     }
 }
 
+/**
+ * @brief Estimates the 3D location of a detected object.
+ * @param rect The bounding box of the detected object.
+ * @return The estimated 3D location as a cv::Point3f.
+ */
 cv::Point3f HumanDetectorTracker::getLocation(const cv::Rect& rect) {
     // Estimate 3D position (x, y, z) in robot's reference frame
     // This is a simplified calculation and would need to be adjusted based on your specific setup
