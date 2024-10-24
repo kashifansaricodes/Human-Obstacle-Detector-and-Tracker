@@ -1,0 +1,228 @@
+Start testing: Oct 23 22:12 EDT
+----------------------------------------------------------
+1/7 Testing: PerceptionTaskTest.InitializationTest
+1/7 Test: PerceptionTaskTest.InitializationTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.InitializationTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.InitializationTest" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.InitializationTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.InitializationTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.InitializationTest (134 ms)
+[----------] 1 test from PerceptionTaskTest (134 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (134 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.InitializationTest" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.InitializationTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: PerceptionTaskTest.InvalidPathTest
+2/7 Test: PerceptionTaskTest.InvalidPathTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.InvalidPathTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.InvalidPathTest" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.InvalidPathTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.InvalidPathTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.InvalidPathTest (123 ms)
+[----------] 1 test from PerceptionTaskTest (123 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (123 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.InvalidPathTest" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.InvalidPathTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: PerceptionTaskTest.BasicFrameTest
+3/7 Test: PerceptionTaskTest.BasicFrameTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.BasicFrameTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.BasicFrameTest" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.BasicFrameTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.BasicFrameTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.BasicFrameTest (527 ms)
+[----------] 1 test from PerceptionTaskTest (527 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (527 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.54 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.BasicFrameTest" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.BasicFrameTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: PerceptionTaskTest.DifferentFrameSizes
+4/7 Test: PerceptionTaskTest.DifferentFrameSizes
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.DifferentFrameSizes" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.DifferentFrameSizes" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.DifferentFrameSizes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.DifferentFrameSizes
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.DifferentFrameSizes (1107 ms)
+[----------] 1 test from PerceptionTaskTest (1107 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1107 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   1.12 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.DifferentFrameSizes" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.DifferentFrameSizes" time elapsed: 00:00:01
+----------------------------------------------------------
+
+5/7 Testing: PerceptionTaskTest.ConsecutiveFrames
+5/7 Test: PerceptionTaskTest.ConsecutiveFrames
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.ConsecutiveFrames" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.ConsecutiveFrames" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.ConsecutiveFrames
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.ConsecutiveFrames
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.ConsecutiveFrames (1653 ms)
+[----------] 1 test from PerceptionTaskTest (1653 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1653 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   1.66 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.ConsecutiveFrames" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.ConsecutiveFrames" time elapsed: 00:00:01
+----------------------------------------------------------
+
+6/7 Testing: PerceptionTaskTest.PerformanceTest
+6/7 Test: PerceptionTaskTest.PerformanceTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.PerformanceTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.PerformanceTest" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.PerformanceTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.PerformanceTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Processing time: 274ms
+[       OK ] PerceptionTaskTest.PerformanceTest (797 ms)
+[----------] 1 test from PerceptionTaskTest (797 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (797 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.81 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.PerformanceTest" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.PerformanceTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: PerceptionTaskTest.EmptyFrameTest
+7/7 Test: PerceptionTaskTest.EmptyFrameTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.EmptyFrameTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.EmptyFrameTest" start time: Oct 23 22:12 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.EmptyFrameTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.EmptyFrameTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+[       OK ] PerceptionTaskTest.EmptyFrameTest (136 ms)
+[----------] 1 test from PerceptionTaskTest (136 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (136 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.EmptyFrameTest" end time: Oct 23 22:12 EDT
+"PerceptionTaskTest.EmptyFrameTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 23 22:12 EDT
