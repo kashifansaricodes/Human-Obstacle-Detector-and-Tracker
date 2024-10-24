@@ -1,0 +1,237 @@
+Start testing: Oct 23 21:45 EDT
+----------------------------------------------------------
+1/6 Testing: PerceptionTaskTest.InvalidPathTest
+1/6 Test: PerceptionTaskTest.InvalidPathTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.InvalidPathTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.InvalidPathTest" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.InvalidPathTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.InvalidPathTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+[       OK ] PerceptionTaskTest.InvalidPathTest (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PerceptionTaskTest.InvalidPathTest" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.InvalidPathTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: PerceptionTaskTest.BasicFrameTest
+2/6 Test: PerceptionTaskTest.BasicFrameTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.BasicFrameTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.BasicFrameTest" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.BasicFrameTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.BasicFrameTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/test/test_perception_task.cpp:65: Skipped
+Detector not initialized, skipping test
+
+[  SKIPPED ] PerceptionTaskTest.BasicFrameTest (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] PerceptionTaskTest.BasicFrameTest
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Skip regular expression found in output. Regex=[\[  SKIPPED \]]
+"PerceptionTaskTest.BasicFrameTest" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.BasicFrameTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: PerceptionTaskTest.DifferentFrameSizes
+3/6 Test: PerceptionTaskTest.DifferentFrameSizes
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.DifferentFrameSizes" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.DifferentFrameSizes" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.DifferentFrameSizes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.DifferentFrameSizes
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/test/test_perception_task.cpp:77: Skipped
+Detector not initialized, skipping test
+
+[  SKIPPED ] PerceptionTaskTest.DifferentFrameSizes (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] PerceptionTaskTest.DifferentFrameSizes
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Skip regular expression found in output. Regex=[\[  SKIPPED \]]
+"PerceptionTaskTest.DifferentFrameSizes" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.DifferentFrameSizes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: PerceptionTaskTest.ConsecutiveFrames
+4/6 Test: PerceptionTaskTest.ConsecutiveFrames
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.ConsecutiveFrames" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.ConsecutiveFrames" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.ConsecutiveFrames
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.ConsecutiveFrames
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/test/test_perception_task.cpp:97: Skipped
+Detector not initialized, skipping test
+
+[  SKIPPED ] PerceptionTaskTest.ConsecutiveFrames (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] PerceptionTaskTest.ConsecutiveFrames
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Skip regular expression found in output. Regex=[\[  SKIPPED \]]
+"PerceptionTaskTest.ConsecutiveFrames" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.ConsecutiveFrames" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: PerceptionTaskTest.PerformanceTest
+5/6 Test: PerceptionTaskTest.PerformanceTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.PerformanceTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.PerformanceTest" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.PerformanceTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.PerformanceTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/test/test_perception_task.cpp:113: Skipped
+Detector not initialized, skipping test
+
+[  SKIPPED ] PerceptionTaskTest.PerformanceTest (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] PerceptionTaskTest.PerformanceTest
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Skip regular expression found in output. Regex=[\[  SKIPPED \]]
+"PerceptionTaskTest.PerformanceTest" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.PerformanceTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: PerceptionTaskTest.EmptyFrameTest
+6/6 Test: PerceptionTaskTest.EmptyFrameTest
+Command: "/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/test/cpp-test" "--gtest_filter=PerceptionTaskTest.EmptyFrameTest" "--gtest_also_run_disabled_tests"
+Directory: /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker
+"PerceptionTaskTest.EmptyFrameTest" start time: Oct 23 21:45 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PerceptionTaskTest.EmptyFrameTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PerceptionTaskTest
+[ RUN      ] PerceptionTaskTest.EmptyFrameTest
+
+Checking YOLO files:
+Model path: yolo_files/yolov3.weights
+Config path: yolo_files/yolov3.cfg
+Classes path: yolo_files/coco.names
+Error initializing detector: OpenCV(4.5.4) ./modules/dnn/src/darknet/darknet_importer.cpp:214: error: (-212:Parsing error) Failed to parse NetParameter file: yolo_files/yolov3.weights in function 'readNetFromDarknet'
+
+/home/kashif/SDR/week6/Human-Obstacle-Detector-and-Tracker/test/test_perception_task.cpp:136: Skipped
+Detector not initialized, skipping test
+
+[  SKIPPED ] PerceptionTaskTest.EmptyFrameTest (0 ms)
+[----------] 1 test from PerceptionTaskTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] PerceptionTaskTest.EmptyFrameTest
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Skip regular expression found in output. Regex=[\[  SKIPPED \]]
+"PerceptionTaskTest.EmptyFrameTest" end time: Oct 23 21:45 EDT
+"PerceptionTaskTest.EmptyFrameTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 23 21:45 EDT
