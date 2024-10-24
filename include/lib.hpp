@@ -2,6 +2,4 @@
 
 #include <iostream>
 
-void dummy() {
-  std::cout << "HI" << std::endl;
-}
+void dummy() { std::cout << "HI" << std::endl; }

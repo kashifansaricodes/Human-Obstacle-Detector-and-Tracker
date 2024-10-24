@@ -1,0 +1,16 @@
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ clang-tidy -p ./ $( find . -name *.cpp | grep -v "/build/" )
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ clang-format -style=Google -i app/main.cpp
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ clang-format -style=Google -i Perception_Task/perception_task.cpp
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ cpplint --filter="-legal/copyright" $( find . -name *.cpp | grep -v "/build/" )
+Done processing ./Perception_Task/perception_task.cpp
+./app/main.cpp:3:  Found C++ system header after other header. Should be: main.h, c system, c++ system, other.  [build/include_order] [4]
+Done processing ./app/main.cpp
+Done processing ./test/test_perception_task.cpp
+Total errors found: 1
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ cpplint --filter="-legal/copyright" $( find . -name *.cpp | grep -v "/build/" )
+Done processing ./Perception_Task/perception_task.cpp
+Done processing ./app/main.cpp
+Done processing ./test/test_perception_task.cpp
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ ^C
+kashif@kashifpc:~/SDR/week6/Human-Obstacle-Detector-and-Tracker$ 
+
