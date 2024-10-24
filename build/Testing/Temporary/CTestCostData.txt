@@ -1,7 +1,0 @@
-PerceptionTaskTest.InvalidPathTest 2 0.00513811
-PerceptionTaskTest.BasicFrameTest 0 0
-PerceptionTaskTest.DifferentFrameSizes 0 0
-PerceptionTaskTest.ConsecutiveFrames 0 0
-PerceptionTaskTest.PerformanceTest 0 0
-PerceptionTaskTest.EmptyFrameTest 0 0
----

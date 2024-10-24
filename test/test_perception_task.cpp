@@ -52,6 +52,11 @@ protected:
     }
 };
 
+// Basic initialization test
+TEST_F(PerceptionTaskTest, InitializationTest) {
+    ASSERT_NE(detector, nullptr) << "Detector should initialize successfully";
+}
+
 // Test invalid paths
 TEST_F(PerceptionTaskTest, InvalidPathTest) {
     EXPECT_THROW({
