@@ -11,8 +11,6 @@ target_include_directories(shell-app PUBLIC
 
 # Link libraries
 target_link_libraries(shell-app PUBLIC
-  myLib1
-  myLib2
   perception_task
   ${OpenCV_LIBS}
 )
