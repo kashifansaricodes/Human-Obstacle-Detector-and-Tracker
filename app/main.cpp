@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <opencv2/opencv.hpp>
+#include <chrono>
 
 #include "perception_task.hpp"
 
@@ -8,8 +9,7 @@
  * @brief Main function for the Human Obstacle Detector and Tracker
  *
  * This program initializes a camera capture, sets up the YOLO model for human
- * detection, and continuously processes video frames to detect and track
- * humans.
+ * detection, and processes video frames to detect and track humans for 10 seconds.
  *
  * @return int Returns 0 on successful execution, -1 on camera opening failure
  */
@@ -47,12 +47,24 @@ int main() {
     cv::Mat frame;
 
     /**
-     * @brief Main processing loop
+     * @brief Processing loop with 10-second duration
      *
-     * Continuously captures frames from the camera, processes them for human
-     * detection and tracking, and displays the results.
+     * Captures frames from the camera, processes them for human
+     * detection and tracking, and displays the results for 10 seconds.
      */
+    auto start_time = std::chrono::steady_clock::now();
+    const auto duration = std::chrono::seconds(10);
+
+    std::cout << "Starting detection for 10 seconds..." << std::endl;
+
     while (true) {
+      // Check if 10 seconds have elapsed
+      auto current_time = std::chrono::steady_clock::now();
+      if (current_time - start_time >= duration) {
+        std::cout << "10 seconds completed, exiting..." << std::endl;
+        break;
+      }
+
       cap >> frame;
       if (frame.empty()) {
         std::cerr << "Error capturing frame" << std::endl;
@@ -74,12 +86,25 @@ int main() {
        */
       cv::imshow("Human Detector and Tracker", frame);
 
-      if (cv::waitKey(30) >= 0) break;
+      // Display remaining time
+      auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(current_time - start_time);
+      auto remaining = duration - elapsed;
+      std::cout << "\rTime remaining: " << remaining.count() << " seconds" << std::flush;
+
+      // Break if 'q' is pressed
+      if (cv::waitKey(30) == 'q') break;
     }
+
+    // Clean up
+    cap.release();
+    cv::destroyAllWindows();
+
   } catch (const cv::Exception& e) {
     std::cerr << "OpenCV exception: " << e.what() << std::endl;
+    return -1;
   } catch (const std::exception& e) {
     std::cerr << "Standard exception: " << e.what() << std::endl;
+    return -1;
   }
 
   return 0;
