@@ -124,6 +124,7 @@ if(WANT_COVERAGE)
       "*gtest*"          # Don't analyze googleTest code
       "/usr/include/*"   # Don't analyze system headers
       "Perception_Task/perception_task.cpp"  # Exclude from unit test coverage if needed
+      "build/*"
     )
 
   # code coverage for the app (shell-app):
