@@ -1,2 +1,0 @@
-/usr/bin/ar qc libperception_task.a CMakeFiles/perception_task.dir/perception_task.cpp.o
-/usr/bin/ranlib libperception_task.a
