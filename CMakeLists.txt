@@ -113,30 +113,31 @@ doxygen_add_docs(docs           # target name
   ${PROJECT_SOURCE_DIR}/Perception_Task
   )
 
-# create targets for building code coverage reports
+# Update this section in your CMakeLists.txt
 if(WANT_COVERAGE)
   # unit test coverage:
-  setup_target_for_coverage_lcov ( # use lcov to generate coverage report
+  setup_target_for_coverage_lcov(
     NAME test_coverage          # target name
     EXECUTABLE ctest     # what to run inside the build directory?
     EXCLUDE
-      "app/main.cpp"     # Unit test does not run app, so don't analyze it
-      "*gtest*"          # Don't analyze googleTest code
-      "/usr/include/*"   # Don't analyze system headers
-      "Perception_Task/perception_task.cpp"  # Exclude from unit test coverage if needed
-      "build/*"
-    )
+      "app/main.cpp"           # exclude main application
+      "*gtest*"                # exclude googleTest code
+      "/usr/include/*"         # exclude system headers
+      "*_deps/*"               # exclude dependencies
+      "build/*"                # exclude build directory
+    DEPENDENCIES cpp-test      # make sure test executable is built
+  )
 
-  # code coverage for the app (shell-app):
-  # Use gcovr instead of lcov if you want to see branch coverage as well
-  setup_target_for_coverage_gcovr_html ( # use gcovr to generate coverage report
-    NAME app_coverage          # target name
-    EXECUTABLE shell-app       # what to run inside the build directory?
+  # code coverage for the app:
+  setup_target_for_coverage_gcovr_html(
+    NAME app_coverage
+    EXECUTABLE shell-app
     EXCLUDE
-    "test/test.cpp"    # App does not run unit test, so don't analyze it
-    "test/main.cpp"    # App does not run unit test, so don't analyze it
-    )
-
+      "test/*"             # exclude test files
+      "build/*"            # exclude build directory
+      "*_deps/*"           # exclude dependencies
+    DEPENDENCIES shell-app # ensure app is built before running coverage
+  )
 endif()
 
 # Sanity check:
