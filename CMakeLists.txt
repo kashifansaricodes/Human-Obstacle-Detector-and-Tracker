@@ -11,12 +11,16 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-# declares a dependency on GoogleTest which is downloaded from GitHub
+# Configure FetchContent
 include(FetchContent)
+set(FETCHCONTENT_QUIET FALSE)
+
+# Download and configure GoogleTest
 FetchContent_Declare(
   googletest
-  URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+  URL "https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip"
 )
+
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)

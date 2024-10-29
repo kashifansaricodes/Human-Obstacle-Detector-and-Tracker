@@ -1,6 +1,3 @@
-# Find GTest package
-find_package(GTest REQUIRED)
-
 # Add test executable
 add_executable(cpp-test
     test_perception_task.cpp
