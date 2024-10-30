@@ -28,19 +28,13 @@ class HumanDetectorTracker {
    */
   void detectAndTrack(cv::Mat& frame);
 
- private:
-  cv::dnn::Net net;  ///< The neural network for object detection.
-  std::vector<std::string> classes;  ///< List of object classes.
-  cv::Mat cameraMatrix;              ///< Camera intrinsic parameters.
-  cv::Mat distCoeffs;                ///< Camera distortion coefficients.
-  std::vector<cv::Ptr<cv::Tracker>> trackers;  ///< List of object trackers.
-
   /**
    * @brief Estimates the 3D location of a detected object.
    * @param rect The bounding box of the detected object.
    * @return The estimated 3D location.
    */
   cv::Point3f getLocation(const cv::Rect& rect);
+
 
   /**
    * @brief Detects humans in a given frame.
@@ -55,6 +49,14 @@ class HumanDetectorTracker {
    * @param detections The new detections to update the trackers with.
    */
   void updateTrackers(cv::Mat& frame, const std::vector<cv::Rect>& detections);
+  
+ private:
+  cv::dnn::Net net;  ///< The neural network for object detection.
+  std::vector<std::string> classes;  ///< List of object classes.
+  cv::Mat cameraMatrix;              ///< Camera intrinsic parameters.
+  cv::Mat distCoeffs;                ///< Camera distortion coefficients.
+  std::vector<cv::Ptr<cv::Tracker>> trackers;  ///< List of object trackers.
+
 };
 
 #endif  // PERCEPTION_TASK_HPP
