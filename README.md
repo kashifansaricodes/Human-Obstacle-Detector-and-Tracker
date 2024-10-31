@@ -23,7 +23,7 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 5. **Proposal Video Link:** https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
 
-6. **Final Video and Demo Link:**
+6. **Final Video and Demo:**
 
 [![Demo Video](https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/blob/master/demo.png)](https://www.youtube.com/watch?v=VOHsfNJf0cY)
 
