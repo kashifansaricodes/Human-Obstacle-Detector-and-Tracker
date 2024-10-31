@@ -23,6 +23,7 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 5. **Proposal Video Link:** https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
 
+6. **Final Video Link:** https://www.youtube.com/watch?v=VOHsfNJf0cY
 
 ### Download and Build the workspace
 ```bash
