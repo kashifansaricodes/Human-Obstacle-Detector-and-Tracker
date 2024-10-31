@@ -11,7 +11,7 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 ![Screenshot from 2024-10-30 20-53-23](https://github.com/user-attachments/assets/4a30789d-3e4a-4f13-bf37-cdfd9cae9016)
 
 
-### Documents
+### Documents and Links
 
 1. The Quadcharts, Proposals and Software Plan can be found in the sub-directory **Documents**
 
@@ -19,10 +19,10 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 3. This [**Sprint Sheet**](https://docs.google.com/document/d/1m02yIOxLIv32R1kmjg583Tf8zdp8dUxPbcdExJ11MYU/edit?usp=sharing) provides a detailed overview of our project’s sprint planning and progress tracking. This document helps ensure transparency, accountability, and consistent progress toward project goals.
 
-### Video links
-**Proposal Video Link:** https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
+4. **Backlog link:** https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
-**Backlog link:** https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
+5. **Proposal Video Link:** https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
+
 
 ### Download and Build the workspace
 ```bash
