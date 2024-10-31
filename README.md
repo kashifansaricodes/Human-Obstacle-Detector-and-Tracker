@@ -2,15 +2,20 @@
 
 ![CICD Workflow status](https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/graph/badge.svg?token=T484S8WKBC)](https://codecov.io/gh/kashifansaricodes/Human-Obstacle-Detector-and-Tracker)[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+![Screenshot from 2024-10-30 20-53-23](https://github.com/user-attachments/assets/4a30789d-3e4a-4f13-bf37-cdfd9cae9016)
 
-## For QuadCharts, Proposals and Software Plan refer sub-directory Documents
-## For UML diagrams, refer to sub-directory UML
 
-## Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
 
-## Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
+### For QuadCharts, Proposals and Software Plan refer sub-directory Documents
+### For UML diagrams, refer to sub-directory UML
 
-## Using the repository
+### Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
+
+### Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
+
+### Sprint Sheet
+
+This [Sprint Sheet](https://docs.google.com/document/d/1m02yIOxLIv32R1kmjg583Tf8zdp8dUxPbcdExJ11MYU/edit?usp=sharing) provides a detailed overview of our project’s sprint planning and progress tracking. This document helps ensure transparency, accountability, and consistent progress toward project goals.
 
 ### Download and Build the workspace
 ```bash
