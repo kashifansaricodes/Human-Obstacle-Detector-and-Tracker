@@ -13,9 +13,9 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 ### Documents
 
-The Quadcharts, Proposals and Software Plan can be found in the sub-directory ####Documents
+The Quadcharts, Proposals and Software Plan can be found in the sub-directory **Documents**
 
-The UML diagrams can be found in the sub-directory ####UML
+The UML diagrams can be found in the sub-directory **UML**
 
 
 ### Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
