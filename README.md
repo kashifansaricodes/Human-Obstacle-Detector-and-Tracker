@@ -13,11 +13,11 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 ### Documents and Links
 
-1. The Quadcharts, Proposals and Software Plan can be found in the sub-directory **Documents**
+1. **Documents:** The Quadcharts, Proposals and Software Plan can be found in the sub-directory *Documents*
 
-2. The UML diagrams can be found in the sub-directory **UML**
+2. **UML:** The UML diagrams can be found in the sub-directory *UML*
 
-3. This [**Sprint Sheet**](https://docs.google.com/document/d/1m02yIOxLIv32R1kmjg583Tf8zdp8dUxPbcdExJ11MYU/edit?usp=sharing) provides a detailed overview of our project’s sprint planning and progress tracking. This document helps ensure transparency, accountability, and consistent progress toward project goals.
+3. **Sprint sheet:** This [**Sprint Sheet**](https://docs.google.com/document/d/1m02yIOxLIv32R1kmjg583Tf8zdp8dUxPbcdExJ11MYU/edit?usp=sharing) provides a detailed overview of our project’s sprint planning and progress tracking. This document helps ensure transparency, accountability, and consistent progress toward project goals.
 
 4. **Backlog link:** https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
