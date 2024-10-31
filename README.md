@@ -6,6 +6,7 @@ The Human Obstacle Detection and Tracking software is a perception stack for rob
 
 The code in this repository was contributed by Kashif Ansari, Abhishek Avadh and Piyush Goenka, all of which are pursuing their M.Eng. in Robotics degree from the University of Maryland. This repository was developed for the Mid-term project of the  course ENPM700: Software Development for Robotics. 
 
+The software uses an RGB camera attached to the robot as input. The use of YOLO and OpenCV enables the processing of the image. The below screenshot conveys the output of the software. 
 ![Screenshot from 2024-10-30 20-53-23](https://github.com/user-attachments/assets/4a30789d-3e4a-4f13-bf37-cdfd9cae9016)
 
 
