@@ -10,7 +10,7 @@
 
 ## Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
-## Standard protocol to run the workspace
+## Using the repository
 
 ### Download and Build the workspace
 ```bash
@@ -29,6 +29,11 @@
   cmake --build build/ --clean-first
   # to see verbose output, do:
   cmake --build build/ --verbose
+
+# Build docs:
+  cmake --build build/ --target docs
+  # open a web browser to browse the doc
+  open docs/html/index.html
 ```
 
 ### Run the code 
@@ -41,9 +46,4 @@
   cd build/; ctest; cd -
   # or if you have newer cmake
   ctest --test-dir build/
-
-# Build docs:
-  cmake --build build/ --target docs
-  # open a web browser to browse the doc
-  open docs/html/index.html
 ```
