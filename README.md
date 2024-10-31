@@ -2,6 +2,10 @@
 
 ![CICD Workflow status](https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/graph/badge.svg?token=T484S8WKBC)](https://codecov.io/gh/kashifansaricodes/Human-Obstacle-Detector-and-Tracker)[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+The Human Obstacle Detection and Tracking software is a perception stack for robots to navigate robustly around humans. The robots are equipped with a monocular camera with the help of which it identifies and tracks humans. This enables the robot to be around humans in a safe manner. 
+
+The code in this repository was contributed by Kashif Ansari, Abhishek Avadh and Piyush Goenka, all of which are pursuing their M.Eng. in Robotics degree from the University of Maryland. This repository was developed for the Mid-term project of the  course ENPM700: Software Development for Robotics. 
+
 ![Screenshot from 2024-10-30 20-53-23](https://github.com/user-attachments/assets/4a30789d-3e4a-4f13-bf37-cdfd9cae9016)
 
 
