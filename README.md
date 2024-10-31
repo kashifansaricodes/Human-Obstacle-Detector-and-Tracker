@@ -25,7 +25,7 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 6. **Final Video and Demo Link:**
 
-[![Demo Video](https://github.com/piyush-g0enka/Drone-Circular-Sine-Wave-Trajectory/blob/main/imgs/yt_indoor.png)](https://www.youtube.com/watch?v=VOHsfNJf0cY)
+[![Demo Video](https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/blob/master/demo.png)](https://www.youtube.com/watch?v=VOHsfNJf0cY)
 
 
 ### Download and Build the workspace
