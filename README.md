@@ -17,14 +17,12 @@ The Quadcharts, Proposals and Software Plan can be found in the sub-directory **
 
 The UML diagrams can be found in the sub-directory **UML**
 
-
-### Proposal Video Link: https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
-
-### Backlog link: https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
-
-### Sprint Sheet
-
 This [Sprint Sheet](https://docs.google.com/document/d/1m02yIOxLIv32R1kmjg583Tf8zdp8dUxPbcdExJ11MYU/edit?usp=sharing) provides a detailed overview of our project’s sprint planning and progress tracking. This document helps ensure transparency, accountability, and consistent progress toward project goals.
+
+### Video links
+**Proposal Video Link:** https://youtu.be/3WHn_zyDtvE?si=f9rTs8p5hs1TCHXb
+
+**Backlog link:** https://docs.google.com/spreadsheets/d/1nO3FHj5wFkExcySgvAdLF-TEKWzpPiGhxI9WFZUwfwI/edit?gid=0#gid=0
 
 ### Download and Build the workspace
 ```bash
