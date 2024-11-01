@@ -27,6 +27,9 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 [![Demo Video](https://github.com/kashifansaricodes/Human-Obstacle-Detector-and-Tracker/blob/master/demo.png)](https://www.youtube.com/watch?v=VOHsfNJf0cY)
 
+### Dependencies
+
+This project uses the OpenCV C++ library for computer vision tasks. Our system also uses a YOLO object detection model. This model helps us 
 
 ### Download and Build the workspace
 ```bash
