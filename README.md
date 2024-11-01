@@ -29,7 +29,7 @@ The software uses an RGB camera attached to the robot as input. The use of YOLO 
 
 ### Dependencies
 
-This project uses the OpenCV C++ library for computer vision tasks. Our system also uses a YOLO object detection model. This model helps our system to detect humans in the camera frame. These libraries are central to the working of our system.
+This project uses the OpenCV C++ library for computer vision tasks. Our system also uses a YOLO object detection model. This model helps our system to detect humans in the camera frame. These libraries are central to the working of our system. OpenCV deals with the fundamental image operations such as resizing, reshaping, formatting, etc. YOLO deals with human detection and tracking.
 
 ### Installing Dependencies
 
@@ -58,6 +58,9 @@ sudo apt install libopencv-dev
 ```
 
 ### Generate Documentation
+
+To generate and view the Doxygen documentation of the project, run the following commands.
+
 ```bash
 # Build docs:
   cmake --build build/ --target docs
@@ -72,6 +75,9 @@ sudo apt install libopencv-dev
   ./build/app/shell-app
 ```
 ### Run Unit tests
+
+To manually run and verify the working of the unit tests, execute the commands below.
+
 ```bash
 # Run tests:
   cd build/; ctest; cd -
