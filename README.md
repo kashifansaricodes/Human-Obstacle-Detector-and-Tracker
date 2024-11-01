@@ -57,7 +57,7 @@ sudo apt install libopencv-dev
   cmake --build build/ --verbose
 ```
 
-### generate Documentation
+### Generate Documentation
 ```bash
 # Build docs:
   cmake --build build/ --target docs
@@ -79,4 +79,31 @@ sudo apt install libopencv-dev
   ctest --test-dir build/
 ```
 
+### Building for Test Coverage
 
+```bash
+# If you don't have gcovr or lcov installed, run:
+  sudo apt-get install gcovr lcov
+# Set the build type to Debug and WANT_COVERAGE=ON:
+  cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
+# Do a clean compile, run unit test, and generate the coverage report:
+  cmake --build build/ --clean-first --target all test_coverage
+# Open a web browser to browse the test coverage report:
+  open build/test_coverage/index.html
+```
+
+### Google Coding Style Verification
+```bash
+# Install Cpplint(ignore if already installed):
+  sudo apt install cpplint
+# Self-check Google code style conformity using Cpplint:
+  cpplint --filter="-legal/copyright" $( find . -name *.cpp | grep -vE -e "^./build/" )
+```
+
+### Static Code Analysis
+```bash
+# Install Cppcheck (ignore if already installed):
+  sudo apt install cppcheck
+# Self-check the static code analysis using Cppcheck:
+  cppcheck --enable=all --std=c++11 --suppress=missingInclude --suppress=unusedFunction $( find . -name *.cpp | grep -vE -e "^./build/" )
+```
